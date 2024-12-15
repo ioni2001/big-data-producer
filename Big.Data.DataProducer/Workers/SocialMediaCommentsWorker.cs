@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Big.Data.DataProducer.Worker;
+namespace Big.Data.DataProducer.Workers;
 
 public class SocialMediaCommentsWorker : BackgroundService
 {

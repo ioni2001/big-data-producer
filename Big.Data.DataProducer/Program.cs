@@ -1,7 +1,7 @@
 ﻿using Big.Data.DataProducer.Models.Configuration;
 using Big.Data.DataProducer.Models.Events;
 using Big.Data.DataProducer.Services;
-using Big.Data.DataProducer.Worker;
+using Big.Data.DataProducer.Workers;
 using KafkaFlow;
 using KafkaFlow.Configuration;
 using KafkaFlow.Serializer;
