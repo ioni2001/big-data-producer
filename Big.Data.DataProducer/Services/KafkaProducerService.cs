@@ -26,6 +26,7 @@ public class KafkaProducerService : IKafkaProducerService
         var value = new SocialMediaCommentEvent
         {
             Name = name,
+            Date = DateTime.Now.ToString(),
             Comment = comment
         };
 

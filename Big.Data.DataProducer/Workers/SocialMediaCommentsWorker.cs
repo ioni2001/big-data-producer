@@ -8,7 +8,7 @@ public class SocialMediaCommentsWorker : BackgroundService
 {
     private readonly IKafkaProducerService _kafkaProducerService;
     private readonly ILogger<SocialMediaCommentsWorker> _logger;
-    private static List<(string, string)> mockedList = [("ioni", "ba e bine, imi place CG"), ("Anda", "nu e bine deloc, nu imi place Ciolacu"), ("Dulcu", "Mie imi place Lasconi ca sunt gay")];
+    private static List<(string, string)> mockedList = [("ioni", "ba e bine, imi place CG"), ("Anda", "nu e bine deloc, nu imi place Ciolacu"), ("Dulcu", "Mie imi place Lasconi")];
 
     public SocialMediaCommentsWorker(IKafkaProducerService kafkaProducerService, ILogger<SocialMediaCommentsWorker> logger)
     {
