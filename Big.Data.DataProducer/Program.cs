@@ -40,6 +40,7 @@ public class Program
             .ConfigureServices((hbc, services) =>
             {
                 services.AddSingleton<IKafkaProducerService, KafkaProducerService>();
+                services.AddSingleton<ICsvParserService, CsvParserService>();
                 services.AddHostedService<SocialMediaCommentsWorker>();
 
                 var kafkaSettings = hbc.Configuration.GetRequiredSection("KafkaSettings").Get<KafkaSettings>();

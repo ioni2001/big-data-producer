@@ -1,6 +1,8 @@
-﻿namespace Big.Data.DataProducer.Services;
+﻿using Big.Data.DataProducer.Models.Events;
+
+namespace Big.Data.DataProducer.Services;
 
 public interface IKafkaProducerService
 {
-    Task ProduceSocialMediaCommentsAsync(string name, string comment);
+    Task ProduceSocialMediaCommentsAsync(SocialMediaCommentEvent commentEvent);
 }

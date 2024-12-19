@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
     <PackageReference Include="KafkaFlow" Version="3.0.10" />
     <PackageReference Include="KafkaFlow.Extensions.Hosting" Version="3.0.10" />
     <PackageReference Include="KafkaFlow.LogHandler.Microsoft" Version="3.0.10" />
@@ -26,6 +27,10 @@
 		<Content Include="appsettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="DataSetFiles\" />
 	</ItemGroup>
 
 </Project>

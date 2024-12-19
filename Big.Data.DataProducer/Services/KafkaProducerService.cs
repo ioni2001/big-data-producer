@@ -16,23 +16,16 @@ public class KafkaProducerService : IKafkaProducerService
         _logger = logger;
     }
 
-    public async Task ProduceSocialMediaCommentsAsync(string name, string comment)
+    public async Task ProduceSocialMediaCommentsAsync(SocialMediaCommentEvent commentEvent)
     {
         var key = JsonConvert.SerializeObject(new JsonKey
         {
-            Name = name,
+            Name = commentEvent.Name,
         });
 
-        var value = new SocialMediaCommentEvent
-        {
-            Name = name,
-            Date = DateTime.Now.ToString(),
-            Comment = comment
-        };
-
-        var result = await _producers["social-media-comments-producer"].ProduceAsync(key, value);
+        var result = await _producers["social-media-comments-producer"].ProduceAsync(key, commentEvent);
 
         _logger.LogInformation("Social Media Comment {Comment} written by {WriterName} was successfully sent to Kafka" +
-            " {KafkaContext.Topic} {KafkaContext.Partition} {KafkaContext.Offset}", comment, name, result.Topic, result.Partition, result.Offset);
+            " {KafkaContext.Topic} {KafkaContext.Partition} {KafkaContext.Offset}", commentEvent.Comment, commentEvent.Name, result.Topic, result.Partition, result.Offset);
     }
 }
